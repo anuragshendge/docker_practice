@@ -6,6 +6,9 @@ default_key = '1'
 cache = redis.StrictRedis(host='redis', port=6379, db=0)
 cache.set(default_key, "one")
 
+@app.route('/hello')
+def hello_world()
+    return 'Hello World!'
 @app.route('/', methods=['GET', 'POST'])
 def mainpage():
 
